@@ -59,6 +59,13 @@ public class Dancer { //extends Object 자바 클래스 최상위 안쓰면 자�
         System.out.println(myName + "님이 춤을 춥니다.");
     }
 
+    public String getCrewName() {
+        return crewName;
+    }
+
+    public String getMyName() {
+        return myName;
+    }
 }
 
 
