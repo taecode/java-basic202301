@@ -2,7 +2,7 @@ package org.example.basic;
 
 import static org.example.basic.DanceLevel.*;
 
-public class Dancer { //extends Object 자바 클래스 최상위 안쓰면 자동으로 붙는다.
+public abstract class Dancer { //extends Object 자바 클래스 최상위 안쓰면 자동으로 붙는다.
 
     private final String crewName; // 팀의 이름
     private final String myName; // 내 이름
@@ -47,17 +47,17 @@ public class Dancer { //extends Object 자바 클래스 최상위 안쓰면 자�
     }
 
     // 춤추기
-    public void dance() {
+    public abstract void dance(); //어차피 자식에서 바꿀꺼자나
 
-        stretch();
-        makeFlexible();
+//        stretch();
+//        makeFlexible();
+//
+//        if (!flexible) {
+//            System.out.println("유연성 운동 안해서 죽었습니다.");
+//            return;
+//        }
+//        System.out.println(myName + "님이 춤을 춥니다.");
 
-        if (!flexible) {
-            System.out.println("유연성 운동 안해서 죽었습니다.");
-            return;
-        }
-        System.out.println(myName + "님이 춤을 춥니다.");
-    }
 
     public String getCrewName() {
         return crewName;
