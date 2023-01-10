@@ -18,4 +18,11 @@ public class PerformanceTeam {
 
     }
 
+    //군무 연습
+    public void groupDance(){
+        for (Dancer dancer : dancers) {
+            dancer.dance();
+        }
+    }
+
 }

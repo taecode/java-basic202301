@@ -22,6 +22,7 @@ public class Main {
 
         streetDancer.dance();
 
+       // new dancer(); // dancer에 abstract 선언해서 추상화 시킴 -> 객체 생성 불가
 
         Dancer idolDancer1 = new IdolDancer("아이돌팀1", "아이돌1"); //IdolDancer의 상위 타입 사용 가능
         Dancer idolDancer2 = new IdolDancer("아이돌팀2", "아이돌2");
@@ -34,5 +35,9 @@ public class Main {
         PerformanceTeam team = new PerformanceTeam();
         team.joinDancer(idolDancer1);
         team.joinDancer(streetDancer3);
+
+        System.out.println();
+
+        team.groupDance();
     }
 }
