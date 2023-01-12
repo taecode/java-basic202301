@@ -75,5 +75,11 @@ public class Main {
                 .collect(toList());
         out.println("names="+names);
 
+        //연습5: Milan에 거주하는 거래자가 한명이라도 있는지 여부 확인?
+
+        //연습6: Cambridge에 사는 거래자의모든 거래액의 총합 출력
+
+        //연습7: 모든 거래에서 최고 거래액은 얼마인가??
+
     }
 }
