@@ -1,43 +1,47 @@
 package org.example;
 
 import org.example.basic.Dancer;
+import org.example.beans.Goods;
 import org.example.inherit.IdolDancer;
 import org.example.inherit.StreetDancer;
 import org.example.poly.PerformanceTeam;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
 
-//        Dancer dancer1 = new Dancer();
-//        Dancer dancer = new Dancer("총알탄소년단", "춤신춤왕");
-//
-//        dancer.dance();
+        Goods goods1 = new Goods("세탁기", 300000);
+        Goods goods2 = new Goods("세탁기", 300000);
+        
+        
+        //soutv
+        System.out.println("goods1 = " + goods1); //16진수 값으로 나옴 6bf256fa (toString 오버라이딩 안하면)
+        System.out.println("goods2 = " + goods2);
 
-        IdolDancer idolDancer = new IdolDancer("AB6IX", "이대휘");
+        System.out.println("(goods1==goods2) = " + (goods1==goods2)); //둘은 메모리에 따로 올라가기 떄문에 다른 객체로 본다
+        System.out.println("(goods1.equals(goods2) = " + (goods1.equals(goods2)));
+        //System.out.println(goods1.hashCode());
 
-        StreetDancer streetDancer = new StreetDancer("길거리춤꾼들", "박격포");
+        Set<String>set1=new HashSet<>(); //set 자동으로 중복 제거
+        set1.add("짜장면");
+        set1.add("짬뽕");
+        set1.add("짜장면");
 
-        idolDancer.dance(); //Idol 댄서만 wink 갈긴다. 오버라이딩으로
-        System.out.println();
+        System.out.println("set1 = " + set1);
+        System.out.println("set1.size() = " + set1.size());
 
-        streetDancer.dance();
+        System.out.println("-----------------------------------------");
 
-       // new dancer(); // dancer에 abstract 선언해서 추상화 시킴 -> 객체 생성 불가
+        Set<Goods> set2=new HashSet<>();
+        set2.add(goods1);
+        set2.add(goods2);
 
-        Dancer idolDancer1 = new IdolDancer("아이돌팀1", "아이돌1"); //IdolDancer의 상위 타입 사용 가능
-        Dancer idolDancer2 = new IdolDancer("아이돌팀2", "아이돌2");
-        Dancer idolDancer3 = new IdolDancer("아이돌팀3", "아이돌3");
+        System.out.println("set2 = " + set2);
+        System.out.println("set2.size() = " + set2.size()); //hash값이 다르기 때문에 setsize=2
 
-        Dancer streetDancer1 = new StreetDancer("스트릿팀1", "스트릿댄서1");
-        Dancer streetDancer2 = new StreetDancer("스트릿팀2", "스트릿댄서2");
-        Dancer streetDancer3 = new StreetDancer("스트릿팀3", "스트릿댄서3");
-
-        PerformanceTeam team = new PerformanceTeam();
-        team.joinDancer(idolDancer1);
-        team.joinDancer(streetDancer3);
-
-        System.out.println();
-
-        team.groupDance();
+        System.out.println(goods1.hashCode()); //hash도 오버라이딩 해야 완전히 같은 값이 된다.
+        System.out.println(goods2.hashCode());
     }
 }
